@@ -61,7 +61,7 @@
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script type="text/javascript" src="//www.simplify.com/commerce/v1/simplify.js"></script>
 	<script type="text/javascript">
-		var $error, $success, $paymentBtn, $busyContainer;
+		var $error, $success, $successextra, $paymentBtn, $busyContainer;
 		$(document).ready(function () {
 			var $selYear = $('#cc-exp-year');
 			$error = $(".error");
