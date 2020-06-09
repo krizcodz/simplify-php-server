@@ -126,8 +126,7 @@
 				request.done(function (response) {
 					console.log("Response = ", response);
 					if (response.id) {
-						$success.html("Payment successfully processed & payment id = " + response.id + " !").fadeIn();
-						$successextra.html("Name: " + name + "  - " + description ).fadeIn();
+						$success.html("Payment successfully processed & payment id = " + response.id + " !" + name " - " +description ).fadeIn();
 					}
 					else if (response.status) {
 						$error.html("Payment failed with status = " + response.status + " !").fadeIn();
