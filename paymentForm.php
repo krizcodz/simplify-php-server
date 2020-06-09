@@ -115,10 +115,11 @@
 				var amount = $('#amount').val();
 				var currency = $("#currency").val();
 				var grno = $("#grno").val();
+				var studentname = $("#studentname").val();
 				var request = $.ajax({
 					url: "/charge.php",
 					type: "POST",
-					data: { simplifyToken: token, amount: amount, currency: currency,grno: grno}
+					data: { simplifyToken: token, amount: amount, currency: currency,grno: grno,studentname: studentname}
 				});
 				
 				
@@ -126,7 +127,7 @@
 				request.done(function (response) {
 					console.log("Response = ", response);
 					if (response.id) {
-						$success.html("Payment successfully processed & payment id = " + response.id + " !" + grno).fadeIn();
+						$success.html("Payment successfully processed & payment id = " + response.id + " ! - " + grno + " - " +studentname).fadeIn();
 						
 					}
 					else if (response.status) {
