@@ -55,15 +55,18 @@
 	</style>
 	<?php
 	$publicKey = getenv('SIMPLIFY_API_PUBLIC_KEY');
+	//$name = $_GET['name'];
+	//$description = $_GET['description'];
 	?>
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script type="text/javascript" src="//www.simplify.com/commerce/v1/simplify.js"></script>
 	<script type="text/javascript">
-		var $error, $success, $paymentBtn, $busyContainer;
+		var $error, $success, $successextra, $paymentBtn, $busyContainer;
 		$(document).ready(function () {
 			var $selYear = $('#cc-exp-year');
 			$error = $(".error");
 			$success = $(".success");
+			$successextra = $(".successextra");
 			$paymentBtn = $("#process-payment-btn");
 			$busyContainer = $('.busy-container');
 
@@ -76,6 +79,7 @@
 				$busyContainer.fadeIn();
 				$error.fadeOut().html("");
 				$success.fadeOut().html("");
+				$successextra.fadeOut().html("");
 				// Disable the submit button
 				$paymentBtn.attr("disabled", "disabled");
 				// Generate a card token & handle the response
@@ -123,6 +127,7 @@
 					console.log("Response = ", response);
 					if (response.id) {
 						$success.html("Payment successfully processed & payment id = " + response.id + " ! - " + name +  " - " + description + " . ").fadeIn();
+						$successextra.html("Name :" + name +  " Description : " + description + " . ").fadeIn();
 					}
 					else if (response.status) {
 						$error.html("Payment failed with status = " + response.status + " !").fadeIn();
@@ -355,9 +360,13 @@
 		<input id="name" type="hidden" class="w-input" maxlength="4" autocomplete="off" value="48948 - DAVID - KG2 - THE INDIAN HIGH SCHOOL"/>
 		<input id="description" type="hidden" class="w-input" maxlength="4" autocomplete="off" value="School Fees Payment"/>
 		
+		<!--<input id="name" type="hidden" class="w-input" maxlength="4" autocomplete="off" value="print php value"/>
+		<input id="description" type="hidden" class="w-input" maxlength="4" autocomplete="off" value=" print php value"/> -->
+		
 		<div class="footer-section">
 			<div class="busy-container"><img src="images/ajax-loader.gif"/></div>
 			<div class="success"></div>
+			<div class="successextra"></div>
 			<div class="error"></div>
 			<div class="text">For more test cards, please checkout this <a class="link" target="_new"
 																		   href="https://www.simplify.com/commerce/docs/tutorial/index#testing">page.</a>
