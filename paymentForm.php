@@ -61,12 +61,12 @@
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script type="text/javascript" src="//www.simplify.com/commerce/v1/simplify.js"></script>
 	<script type="text/javascript">
-		var $error, $success, $successextra, $paymentBtn, $busyContainer;
+		var $error, $success, $paymentBtn, $busyContainer;
 		$(document).ready(function () {
 			var $selYear = $('#cc-exp-year');
 			$error = $(".error");
 			$success = $(".success");
-			$successextra = $(".successextra");
+			
 			$paymentBtn = $("#process-payment-btn");
 			$busyContainer = $('.busy-container');
 
@@ -79,7 +79,7 @@
 				$busyContainer.fadeIn();
 				$error.fadeOut().html("");
 				$success.fadeOut().html("");
-				$successextra.fadeOut().html("");
+				
 				// Disable the submit button
 				$paymentBtn.attr("disabled", "disabled");
 				// Generate a card token & handle the response
@@ -126,7 +126,8 @@
 				request.done(function (response) {
 					console.log("Response = ", response);
 					if (response.id) {
-						$success.html("Payment successfully processed & payment id = " + response.id + " !" + name " - " +description ).fadeIn();
+						$success.html("Payment successfully processed & payment id = " + response.id + " ! - " + name " - " +description ).fadeIn();
+						
 					}
 					else if (response.status) {
 						$error.html("Payment failed with status = " + response.status + " !").fadeIn();
@@ -366,7 +367,7 @@
 			</div>
 		</div>
 		
-		<input id="name" type="hidden" class="w-input" maxlength="4" autocomplete="off" value="48948 - DAVID - KG2 - THE INIDAN HIGH SCHOOL"/>
+		<input id="name" type="hidden" class="w-input" maxlength="4" autocomplete="off" value="48948 - DAVID - KG2 - THE INDIAN HIGH SCHOOL"/>
 		<input id="description" type="hidden" class="w-input" maxlength="4" autocomplete="off" value="School Fees Payment"/>
 		
 		<!--<input id="name" type="hidden" class="w-input" maxlength="4" autocomplete="off" value=""/>
