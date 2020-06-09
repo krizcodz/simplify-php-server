@@ -215,15 +215,15 @@
 		<fieldset>
 			<legend>Fields:</legend>
 			<label class="text">GR No: </label>
-			<label class="text"><?=$grno?></label>
+			<label class="text" id="grno"><?=$grno?></label>
 			<label class="text">Student Name: </label>
-			<label class="text"><?=$studentname?></label>
+			<label class="text" id="studentname"><?=$studentname?></label>
 			<label class="text">School Name: </label>
-			<label class="text"><?=$schoolname?></label>
+			<label class="text" id="schoolname"><?=$schoolname?></label>
 			<label class="text">Class & Division:: </label>
-			<label class="text"><?=$classdiv?></label>
+			<label class="text" id="classdiv><?=$classdiv?></label>
 			<label class="text">Amount: </label>
-			<label class="text"><?=$amount?></label>
+			<label class="text" id="amount"><?=$amount?></label>
 		</fieldset>
 		<div class="footer-section">
 			<div class="busy-container"><img src="images/ajax-loader.gif"/></div>
