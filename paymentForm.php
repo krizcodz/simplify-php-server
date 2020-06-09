@@ -55,6 +55,8 @@
 	</style>
 	<?php
 	$publicKey = getenv('SIMPLIFY_API_PUBLIC_KEY');
+	$name = $_GET['name'];
+	$description = $_GET['description'];
 	?>
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script type="text/javascript" src="//www.simplify.com/commerce/v1/simplify.js"></script>
@@ -64,7 +66,7 @@
 			var $selYear = $('#cc-exp-year');
 			$error = $(".error");
 			$success = $(".success");
-			$grno = $(".grno");
+			$successextra = $(".successextra");
 			$paymentBtn = $("#process-payment-btn");
 			$busyContainer = $('.busy-container');
 
@@ -77,6 +79,7 @@
 				$busyContainer.fadeIn();
 				$error.fadeOut().html("");
 				$success.fadeOut().html("");
+				$successextra.fadeOut().html("");
 				// Disable the submit button
 				$paymentBtn.attr("disabled", "disabled");
 				// Generate a card token & handle the response
@@ -88,11 +91,9 @@
 						expMonth: $("#cc-exp-month").val(),
 						expYear: $("#cc-exp-year").val()
 					}
-					
-				}, simplifyResponseHandler);	
-					
-			});		
-		
+				}, simplifyResponseHandler);
+			});
+
 		});
 
 		function simplifyResponseHandler(data) {
@@ -114,21 +115,19 @@
 				var token = data["id"];
 				var amount = $('#amount').val();
 				var currency = $("#currency").val();
-				var grno = $("#grno").val();
-				var studentname = $("#studentname").val();
+				var name = $("#name").val();
+				var description = $("#description").val();
 				var request = $.ajax({
 					url: "/charge.php",
 					type: "POST",
-					data: { simplifyToken: token, amount: amount, currency: currency,grno: grno,studentname: studentname}
+					data: { simplifyToken: token, amount: amount, currency: currency, name: name, description: description}
 				});
-				
-				
 
 				request.done(function (response) {
 					console.log("Response = ", response);
 					if (response.id) {
-						$success.html("Payment successfully processed & payment id = " + response.id + " ! - " + grno + " - " +studentname).fadeIn();
-						
+						$success.html("Payment successfully processed & payment id = " + response.id + " !").fadeIn();
+						$successextra.html("Name: " + name + "  - " + description ).fadeIn();
 					}
 					else if (response.status) {
 						$error.html("Payment failed with status = " + response.status + " !").fadeIn();
@@ -352,32 +351,6 @@
 				</td>
 			</tr>
 			<tr>
-				<td><label class="text">GR No: </label></td>
-				<td><input id="grno" type="text" class="w-input" maxlength="4" autocomplete="off" value="48948"/></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td><label class="text">Student Name: </label></td>
-				<td><input id="studentname" type="text" class="w-input" maxlength="4" autocomplete="off" value="David"/></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td><label class="text">School Name: </label></td>
-				<td><input id="schoolname" type="text" class="w-input" maxlength="4" autocomplete="off" value="IHS"/></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td><label class="text">Class & Division: </label></td>
-				<td><input id="classdiv" type="text" class="w-input" maxlength="4" autocomplete="off" value="Kg1O"/></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td><label class="text">Amount: </label></td>
-				<td><input id="amount" type="text" class="w-input" maxlength="4" autocomplete="off" value="100"/></td>
-				<td></td>
-			</tr>
-			
-			<tr>
 				<td></td>
 				<td>
 					<button id="process-payment-btn" class="w-button">Run Test Payment</button>
@@ -387,12 +360,16 @@
 		<div class="footer-section">
 			<div class="busy-container"><img src="images/ajax-loader.gif"/></div>
 			<div class="success"></div>
-			<div class="grno"></div>
+			<div class="successextra"></div>
 			<div class="error"></div>
 			<div class="text">For more test cards, please checkout this <a class="link" target="_new"
 																		   href="https://www.simplify.com/commerce/docs/tutorial/index#testing">page.</a>
 			</div>
 		</div>
+		
+		<input id="name" type="hidden" class="w-input" maxlength="4" autocomplete="off" value="<?=$name?>"/>
+		<input id="description" type="hidden" class="w-input" maxlength="4" autocomplete="off" value="<?=$description?>"/>
+		
 	</form>
 </div>
 <div class="w-section footer-section">
