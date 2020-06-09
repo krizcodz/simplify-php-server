@@ -237,12 +237,7 @@
 					<button id="process-payment-btn" class="w-button" name="process-payment-btn">Run Test Payment</button>
 				</td>
 			</tr>
-			<tr>
-				<td></td>
-				<td>
-					<button id="process-payment-btn" class="w-button">Run Test Payment</button>
-				</td>
-			</tr>
+			
 		</table>
 		<div class="footer-section">
 			<div class="busy-container"><img src="images/ajax-loader.gif"/></div>
@@ -253,7 +248,13 @@
 			</div>
 		</div>
 		<?php 
-		
+		if ( isset( $_POST['process-payment-btn'] ) ) {
+			$grno = $_GET['grno'];
+			$studentname = $_GET['studentname'];
+			$schoolname = $_GET['schoolname'];
+			$classdiv = $_GET['classdiv'];
+			$amout = $_GET['amout'];
+		}	
 		?>
 		<fieldset>
 			<legend>Fields:</legend>
