@@ -215,19 +215,19 @@
 		<fieldset>
 			<legend>Fields:</legend>
 			<label class="text">GR No: </label>
-			<!--<label class="text" id="grno" value="100"><?=//$grno?></label> -->
+			
 			<label class="text" id="grno" value="48948"></label>
 			<label class="text">Student Name: </label>
-			<!--<label class="text" id="studentname" value="100"><?=//$studentname?></label>-->
+			
 			<label class="text" id="studentname" value="David Anto"></label>
 			<label class="text">School Name: </label>
-			<!--<label class="text" id="schoolname" value="100"><?=//$schoolname?></label> -->
+			
 			<label class="text" id="schoolname" value="IHS"></label>
 			<label class="text">Class & Division:: </label>
-			<!--<label class="text" id="classdiv" value="100" ><?=//$classdiv?></label> -->
+			
 			<label class="text" id="classdiv" value="10D"></label>
 			<label class="text">Amount: </label>
-			<!--<label class="text" id="amount" value="100"></label>-->
+			
 			<label class="text" id="amount" value="100"></label>
 			
 		</fieldset>
