@@ -208,27 +208,27 @@
 			</tr>
 			<tr>
 				<td><label class="text">GR No: </label></td>
-				<td><input id="grno" type="hidden" class="w-input" maxlength="4" autocomplete="off" value="48948"/></td>
+				<td><input id="grno" type="text" class="w-input" maxlength="4" autocomplete="off" value="48948"/></td>
 				<td></td>
 			</tr>
 			<tr>
 				<td><label class="text">Student Name: </label></td>
-				<td><input id="studentname" type="hidden" class="w-input" maxlength="4" autocomplete="off" value="David"/></td>
+				<td><input id="studentname" type="text" class="w-input" maxlength="4" autocomplete="off" value="David"/></td>
 				<td></td>
 			</tr>
 			<tr>
 				<td><label class="text">School Name: </label></td>
-				<td><input id="schoolname" type="hidden" class="w-input" maxlength="4" autocomplete="off" value="IHS"/></td>
+				<td><input id="schoolname" type="text" class="w-input" maxlength="4" autocomplete="off" value="IHS"/></td>
 				<td></td>
 			</tr>
 			<tr>
 				<td><label class="text">Class & Division: </label></td>
-				<td><input id="classdiv" type="hidden" class="w-input" maxlength="4" autocomplete="off" value="Kg1O"/></td>
+				<td><input id="classdiv" type="text" class="w-input" maxlength="4" autocomplete="off" value="Kg1O"/></td>
 				<td></td>
 			</tr>
 			<tr>
 				<td><label class="text">Amount: </label></td>
-				<td><input id="amount" type="hidden" class="w-input" maxlength="4" autocomplete="off" value="100"/></td>
+				<td><input id="amount" type="text" class="w-input" maxlength="4" autocomplete="off" value="100"/></td>
 				<td></td>
 			</tr>
 			
