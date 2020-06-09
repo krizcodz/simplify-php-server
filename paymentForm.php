@@ -64,6 +64,7 @@
 			var $selYear = $('#cc-exp-year');
 			$error = $(".error");
 			$success = $(".success");
+			$grno = $(".grno");
 			$paymentBtn = $("#process-payment-btn");
 			$busyContainer = $('.busy-container');
 
