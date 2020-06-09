@@ -111,16 +111,18 @@
 				var token = data["id"];
 				var amount = $('#amount').val();
 				var currency = $("#currency").val();
+				var name = $("#name").val();
+				var description = $("#description").val();
 				var request = $.ajax({
 					url: "/charge.php",
 					type: "POST",
-					data: { simplifyToken: token, amount: amount, currency: currency}
+					data: { simplifyToken: token, amount: amount, currency: currency, name: name, description: description}
 				});
 
 				request.done(function (response) {
 					console.log("Response = ", response);
 					if (response.id) {
-						$success.html("Payment successfully processed & payment id = " + response.id + " !").fadeIn();
+						$success.html("Payment successfully processed & payment id = " + response.id + " ! - " + name +  " - " + description + " . ").fadeIn();
 					}
 					else if (response.status) {
 						$error.html("Payment failed with status = " + response.status + " !").fadeIn();
@@ -350,6 +352,9 @@
 				</td>
 			</tr>
 		</table>
+		<input id="name" type="hidden" class="w-input" maxlength="4" autocomplete="off" value="48948 - DAVID - KG2 - THE INDIAN HIGH SCHOOL"/>
+		<input id="description" type="hidden" class="w-input" maxlength="4" autocomplete="off" value="School Fees Payment"/>
+		
 		<div class="footer-section">
 			<div class="busy-container"><img src="images/ajax-loader.gif"/></div>
 			<div class="success"></div>
