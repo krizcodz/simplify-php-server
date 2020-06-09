@@ -1,34 +1,4 @@
-Skip to content
-Why GitHub? 
-Team
-Enterprise
-Explore 
-Marketplace
-Pricing 
-Search
-
-Sign in
-Sign up
-krizcodz
-/
-simplify-php-server
-forked from simplifycom/simplify-php-server
-0018
- Code
- Pull requests 0 Actions
- Projects 0
- Security 0
- Insights
-Join GitHub today
-GitHub is home to over 50 million developers working together to host and review code, manage projects, and build software together.
-
-simplify-php-server/paymentForm.php /
-@krizcodz krizcodz Update paymentForm.php
-e22df11 13 days ago
-@siddii@krizcodz
-220 lines (206 sloc)  6.58 KB
-  
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html data-wf-site="5582f9e5792714e458bb85b8" data-wf-page="5582f9e5792714e458bb85b9">
 <head>
 	<meta charset="utf-8">
@@ -271,15 +241,3 @@ e22df11 13 days ago
 </div>
 </body>
 </html>
-© 2020 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Help
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
