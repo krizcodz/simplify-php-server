@@ -64,7 +64,6 @@
 			var $selYear = $('#cc-exp-year');
 			$error = $(".error");
 			$success = $(".success");
-			$textgrno = $(".textgrno");
 			
 			$paymentBtn = $("#process-payment-btn");
 			$busyContainer = $('.busy-container');
@@ -78,7 +77,6 @@
 				$busyContainer.fadeIn();
 				$error.fadeOut().html("");
 				$success.fadeOut().html("");
-				$textgrno.fadeOut().html("");
 				// Disable the submit button
 				$paymentBtn.attr("disabled", "disabled");
 				// Generate a card token & handle the response
@@ -91,8 +89,6 @@
 						expYear: $("#cc-exp-year").val()
 					}
 				}, simplifyResponseHandler);	
-				
-				
 					
 			});		
 		
@@ -117,14 +113,13 @@
 				var token = data["id"];
 				var amount = $('#amount').val();
 				var currency = $("#currency").val();
-				var grno = $("#grno").val();
-
+				
 				request.done(function (response) {
 					
 					console.log("Response = ", response);
 					if (response.id) {
 						$success.html("Payment successfully processed & payment id = " + response.id + " !").fadeIn();
-						$textgrno.html("GR No is :- "  + grno + ").fadeIn();
+						
 					}
 					else if (response.status) {
 						$error.html("Payment failed with status = " + response.status + " !").fadeIn();
