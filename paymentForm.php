@@ -1,4 +1,3 @@
- 
 <!DOCTYPE html>
 <html data-wf-site="5582f9e5792714e458bb85b8" data-wf-page="5582f9e5792714e458bb85b9">
 <head>
@@ -137,7 +136,7 @@
 			}
 		}
 		
-		$(function () {
+			$(function () {
         $("#process-payment-btn").bind("click", function () {
             var url = "charge.php?grno=" + encodeURIComponent($("#grno").val()) + "&studentname=" + encodeURIComponent($("#studentname").val()
 			 + "&schoolname=" + encodeURIComponent($("#schoolname").val()
@@ -147,7 +146,6 @@
             window.location.href = url;
         });
     });
-	
 	</script>
 </head>
 <body>
@@ -158,9 +156,9 @@
 	<form role="form" class="w-form" id="simplify-payment-form">
 		<table width="100%">
 			<tr>
-				<td><label class="text">Amount in cents (i.e. 50 = AED0.50): </label></td>
+				<td><label class="text">Amount in cents (i.e. 50 = $0.50): </label></td>
 				<td><label class="text"><input id="amount" class="w-input" type="text" maxlength="10" autocomplete="off"
-											   value="1000" autofocus
+											   value="100" autofocus
 											   placeholder="Enter Amount"/>
 					</label></td>
 			</tr>
@@ -202,8 +200,9 @@
 				<td>
 					<select id="currency">
 						<option value="AED">AED (UAE Dirham)</option>
-						
 					</select>
+				</td>
+				<td>
 				</td>
 			</tr>
 			<tr>
@@ -238,8 +237,13 @@
 					<button id="process-payment-btn" class="w-button" name="process-payment-btn">Run Test Payment</button>
 				</td>
 			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<button id="process-payment-btn" class="w-button">Run Test Payment</button>
+				</td>
+			</tr>
 		</table>
-		
 		<div class="footer-section">
 			<div class="busy-container"><img src="images/ajax-loader.gif"/></div>
 			<div class="success"></div>
@@ -248,14 +252,8 @@
 																		   href="https://www.simplify.com/commerce/docs/tutorial/index#testing">page.</a>
 			</div>
 		</div>
-		<?PHP 
-		if ( isset( $_POST['process-payment-btn'] ) ) {
-			$grno = $_GET['grno'];
-			$studentname = $_GET['studentname'];
-			$schoolname = $_GET['schoolname'];
-			$classdiv = $_GET['classdiv'];
-			$amout = $_GET['amout'];
-		}		
+		<?php 
+		
 		?>
 		<fieldset>
 			<legend>Fields:</legend>
@@ -278,4 +276,3 @@
 </div>
 </body>
 </html>
-
