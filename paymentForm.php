@@ -64,7 +64,7 @@
 			var $selYear = $('#cc-exp-year');
 			$error = $(".error");
 			$success = $(".success");
-			
+			$grno = $(".grno");
 			$paymentBtn = $("#process-payment-btn");
 			$busyContainer = $('.busy-container');
 
@@ -88,6 +88,7 @@
 						expMonth: $("#cc-exp-month").val(),
 						expYear: $("#cc-exp-year").val()
 					}
+					
 				}, simplifyResponseHandler);	
 					
 			});		
@@ -113,12 +114,19 @@
 				var token = data["id"];
 				var amount = $('#amount').val();
 				var currency = $("#currency").val();
+				var grno = $("#grno").val();
+				var request = $.ajax({
+					url: "/charge.php",
+					type: "POST",
+					data: { simplifyToken: token, amount: amount, currency: currency,grno: grno}
+				});
 				
+				
+
 				request.done(function (response) {
-					
 					console.log("Response = ", response);
 					if (response.id) {
-						$success.html("Payment successfully processed & payment id = " + response.id + " !").fadeIn();
+						$success.html("Payment successfully processed & payment id = " + response.id + " !" + grno).fadeIn();
 						
 					}
 					else if (response.status) {
@@ -375,12 +383,6 @@
 				</td>
 			</tr>
 		</table>
-		
-		<fieldset>
-			<legend>Fields:</legend>
-			<label class="textgrno" id="grno" value=""></label>
-		</fieldset>
-		
 		<div class="footer-section">
 			<div class="busy-container"><img src="images/ajax-loader.gif"/></div>
 			<div class="success"></div>
@@ -390,8 +392,6 @@
 																		   href="https://www.simplify.com/commerce/docs/tutorial/index#testing">page.</a>
 			</div>
 		</div>
-		
-		
 	</form>
 </div>
 <div class="w-section footer-section">
