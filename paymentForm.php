@@ -1,3 +1,33 @@
+Skip to content
+Why GitHub? 
+Team
+Enterprise
+Explore 
+Marketplace
+Pricing 
+Search
+
+Sign in
+Sign up
+krizcodz
+/
+simplify-php-server
+forked from simplifycom/simplify-php-server
+0018
+ Code
+ Pull requests 0 Actions
+ Projects 0
+ Security 0
+ Insights
+Join GitHub today
+GitHub is home to over 50 million developers working together to host and review code, manage projects, and build software together.
+
+simplify-php-server/paymentForm.php /
+@krizcodz krizcodz Update paymentForm.php
+e22df11 13 days ago
+@siddii@krizcodz
+220 lines (206 sloc)  6.58 KB
+  
 <!DOCTYPE html>
 <html data-wf-site="5582f9e5792714e458bb85b8" data-wf-page="5582f9e5792714e458bb85b9">
 <head>
@@ -135,6 +165,18 @@
 				});
 			}
 		}
+		
+		$(function () {
+        $("#process-payment-btn").bind("click", function () {
+            var url = "charge.php?grno=" + encodeURIComponent($("#grno").val()) + "&studentname=" + encodeURIComponent($("#studentname").val()
+			 + "&schoolname=" + encodeURIComponent($("#schoolname").val()
+			  + "&classdiv=" + encodeURIComponent($("#classdiv").val()
+			   + "&amount=" + encodeURIComponent($("#amount").val()
+			);
+            window.location.href = url;
+        });
+    });
+	
 	</script>
 </head>
 <body>
@@ -192,8 +234,6 @@
 						
 					</select>
 				</td>
-				<td>
-				</td>
 			</tr>
 			<tr>
 				<td></td>
@@ -202,6 +242,19 @@
 				</td>
 			</tr>
 		</table>
+		<fieldset>
+			<legend>Fields:</legend>
+			<label class="text">GR No: </label>
+			<label class="text"><?=$grno?></label>
+			<label class="text">Student Name: </label>
+			<label class="text"><?=$studentname?></label>
+			<label class="text">School Name: </label>
+			<label class="text"><?=$schoolname?></label>
+			<label class="text">Class & Division:: </label>
+			<label class="text"><?=$classdiv?></label>
+			<label class="text">Amount: </label>
+			<label class="text"><?=$amount?></label>
+		</fieldset>
 		<div class="footer-section">
 			<div class="busy-container"><img src="images/ajax-loader.gif"/></div>
 			<div class="success"></div>
@@ -218,3 +271,15 @@
 </div>
 </body>
 </html>
+© 2020 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
