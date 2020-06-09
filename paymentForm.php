@@ -87,11 +87,9 @@
 						expMonth: $("#cc-exp-month").val(),
 						expYear: $("#cc-exp-year").val()
 					}
-					
-				}, simplifyResponseHandler);	
-					
-			});		
-		
+				}, simplifyResponseHandler);
+			});
+
 		});
 
 		function simplifyResponseHandler(data) {
@@ -113,21 +111,16 @@
 				var token = data["id"];
 				var amount = $('#amount').val();
 				var currency = $("#currency").val();
-				var name = $("#name").val();
-				var description = $("#description").val();
 				var request = $.ajax({
 					url: "/charge.php",
 					type: "POST",
-					data: { simplifyToken: token, amount: amount, currency: currency, name: name, description: description}
+					data: { simplifyToken: token, amount: amount, currency: currency}
 				});
-				
-				
 
 				request.done(function (response) {
 					console.log("Response = ", response);
 					if (response.id) {
-						$success.html("Payment successfully processed & payment id = " + response.id + " ! - " + name " - " +description ).fadeIn();
-						
+						$success.html("Payment successfully processed & payment id = " + response.id + " !").fadeIn();
 					}
 					else if (response.status) {
 						$error.html("Payment failed with status = " + response.status + " !").fadeIn();
@@ -360,14 +353,11 @@
 		<div class="footer-section">
 			<div class="busy-container"><img src="images/ajax-loader.gif"/></div>
 			<div class="success"></div>
-			<div class="grno"></div>
 			<div class="error"></div>
 			<div class="text">For more test cards, please checkout this <a class="link" target="_new"
 																		   href="https://www.simplify.com/commerce/docs/tutorial/index#testing">page.</a>
 			</div>
 		</div>
-		<input id="name" type="hidden" class="w-input" maxlength="4" autocomplete="off" value="48948 - DAVID - KG2 - THE INDIAN HIGH SCHOOL"/>
-		<input id="description" type="hidden" class="w-input" maxlength="4" autocomplete="off" value="School Fees Payment"/>
 	</form>
 </div>
 <div class="w-section footer-section">
