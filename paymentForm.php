@@ -370,8 +370,8 @@
 		<input id="name" type="hidden" class="w-input" maxlength="4" autocomplete="off" value="48948 - DAVID - KG2 - THE INIDAN HIGH SCHOOL"/>
 		<input id="description" type="hidden" class="w-input" maxlength="4" autocomplete="off" value="School Fees Payment"/>
 		
-		<!--<input id="name" type="hidden" class="w-input" maxlength="4" autocomplete="off" value="<?=//$name?>"/>
-		<input id="description" type="hidden" class="w-input" maxlength="4" autocomplete="off" value="<?=//$description?>"/> -->
+		<!--<input id="name" type="hidden" class="w-input" maxlength="4" autocomplete="off" value=""/>
+		<input id="description" type="hidden" class="w-input" maxlength="4" autocomplete="off" value=""/> -->
 		
 		
 	</form>
