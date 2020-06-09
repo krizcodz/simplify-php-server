@@ -1,5 +1,4 @@
 <?php
-
 /*
  * Copyright (c) 2013, MasterCard International Incorporated
  * All rights reserved.
