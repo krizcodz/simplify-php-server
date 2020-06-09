@@ -64,7 +64,8 @@
 			var $selYear = $('#cc-exp-year');
 			$error = $(".error");
 			$success = $(".success");
-			$grno = $(".grno");
+			$textgrno = $(".textgrno");
+			
 			$paymentBtn = $("#process-payment-btn");
 			$busyContainer = $('.busy-container');
 
@@ -77,6 +78,7 @@
 				$busyContainer.fadeIn();
 				$error.fadeOut().html("");
 				$success.fadeOut().html("");
+				$textgrno.fadeOut().html("");
 				// Disable the submit button
 				$paymentBtn.attr("disabled", "disabled");
 				// Generate a card token & handle the response
@@ -89,6 +91,8 @@
 						expYear: $("#cc-exp-year").val()
 					}
 				}, simplifyResponseHandler);	
+				
+				
 					
 			});		
 		
@@ -114,16 +118,13 @@
 				var amount = $('#amount').val();
 				var currency = $("#currency").val();
 				var grno = $("#grno").val();
-				
-				
-				var url = "charge.php?grno=" + encodeURIComponent($("#grno").val());
 
 				request.done(function (response) {
 					
 					console.log("Response = ", response);
 					if (response.id) {
 						$success.html("Payment successfully processed & payment id = " + response.id + " !").fadeIn();
-						$('.textgrno').append('<br />' + grno);
+						$textgrno.html("GR No is :- "  + grno + ").fadeIn();
 					}
 					else if (response.status) {
 						$error.html("Payment failed with status = " + response.status + " !").fadeIn();
@@ -382,7 +383,6 @@
 		
 		<fieldset>
 			<legend>Fields:</legend>
-			<label class="text" >GR No: </label>
 			<label class="textgrno" id="grno" value=""></label>
 		</fieldset>
 		
