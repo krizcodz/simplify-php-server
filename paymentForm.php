@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+ 
+<!DOCTYPE html>
 <html data-wf-site="5582f9e5792714e458bb85b8" data-wf-page="5582f9e5792714e458bb85b9">
 <head>
 	<meta charset="utf-8">
@@ -206,31 +207,39 @@
 				</td>
 			</tr>
 			<tr>
+				<td><label class="text">GR No: </label></td>
+				<td><input id="grno" type="text" class="w-input" maxlength="4" autocomplete="off" value="48948"/></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td><label class="text">Student Name: </label></td>
+				<td><input id="studentname" type="text" class="w-input" maxlength="4" autocomplete="off" value="David"/></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td><label class="text">School Name: </label></td>
+				<td><input id="schoolname" type="text" class="w-input" maxlength="4" autocomplete="off" value="IHS"/></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td><label class="text">Class & Division: </label></td>
+				<td><input id="classdiv" type="text" class="w-input" maxlength="4" autocomplete="off" value="Kg1O"/></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td><label class="text">Amount: </label></td>
+				<td><input id="amount" type="text" class="w-input" maxlength="4" autocomplete="off" value="100"/></td>
+				<td></td>
+			</tr>
+			
+			<tr>
 				<td></td>
 				<td>
 					<button id="process-payment-btn" class="w-button">Run Test Payment</button>
 				</td>
 			</tr>
 		</table>
-		<fieldset>
-			<legend>Fields:</legend>
-			<label class="text">GR No: </label>
-			
-			<label class="text" id="grno" value="48948"></label>
-			<label class="text">Student Name: </label>
-			
-			<label class="text" id="studentname" value="David Anto"></label>
-			<label class="text">School Name: </label>
-			
-			<label class="text" id="schoolname" value="IHS"></label>
-			<label class="text">Class & Division:: </label>
-			
-			<label class="text" id="classdiv" value="10D"></label>
-			<label class="text">Amount: </label>
-			
-			<label class="text" id="amount" value="100"></label>
-			
-		</fieldset>
+		
 		<div class="footer-section">
 			<div class="busy-container"><img src="images/ajax-loader.gif"/></div>
 			<div class="success"></div>
@@ -247,3 +256,4 @@
 </div>
 </body>
 </html>
+
