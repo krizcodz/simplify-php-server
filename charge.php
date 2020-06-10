@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Copyright (c) 2013, MasterCard International Incorporated
  * All rights reserved.
@@ -51,21 +52,17 @@ $currency = isset($_POST["currency"]) ? $_POST["currency"] : 'AED';
 	'currency' => $currency
 );*/
 
-/*$gr_no = $_POST['gr_no'];
+
 $name = $_POST['name'];
-$grade = $_POST['grade'];
-$School_Name = $_POST['School_Name'];
-$name = $gr_no . " - " . $name . " - " . $grade . " - " .  $School_Name; */
-
-$name = "48948 - DAVID - KG2 - THE INIDAN HIGH SCHOOL";
-$description = "School Fees Payment";
-
+$description = $_POST['description'];
+$reference = $_POST['reference'];
 
 $paymentPayload = array(
 	'amount' => $payment,
 	'token' => $token,
 	'name' => $name,
 	'description' => $description,
+	'reference' => $reference,
 	'currency' => $currency
 );
 
