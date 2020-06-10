@@ -2,7 +2,7 @@
 <html data-wf-site="5582f9e5792714e458bb85b8" data-wf-page="5582f9e5792714e458bb85b9">
 <head>
 	<meta charset="utf-8">
-	<title>Simplify Test Payment Form</title>
+	<title>Payment Form</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
 	<link rel="stylesheet" type="text/css" href="css/normalize.css">
@@ -150,7 +150,7 @@
 <body>
 <div class="w-container message">
 	<div>
-		<h1 class="main-message">Run Test Payments on Simplify Commerce</h1>
+		<h1 class="main-message">Test Payments</h1>
 	</div>
 	<form role="form" class="w-form" id="simplify-payment-form">
 		<table width="100%">
@@ -356,7 +356,7 @@
 			<tr>
 				<td></td>
 				<td>
-					<button id="process-payment-btn" class="w-button">Run Test Payment</button>
+					<button id="process-payment-btn" class="w-button">Pay</button>
 				</td>
 			</tr>
 		</table>
