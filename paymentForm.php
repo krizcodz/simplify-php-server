@@ -55,8 +55,8 @@
 	</style>
 	<?php
 	$publicKey = getenv('SIMPLIFY_API_PUBLIC_KEY');
-	$name = $_GET['name'];
-	$description = $_GET['description'];
+	echo "name" . $name = $_GET['name'];
+	echo "desc" . $description = $_GET['description'];
 	?>
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script type="text/javascript" src="//www.simplify.com/commerce/v1/simplify.js"></script>
