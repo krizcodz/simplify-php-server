@@ -371,9 +371,7 @@
 			<div class="success"></div>
 			<div class="successextra"></div>
 			<div class="error"></div>
-			<div class="text">For more test cards, please checkout this <a class="link" target="_new"
-																		   href="https://www.simplify.com/commerce/docs/tutorial/index#testing">page.</a>
-			</div>
+		
 		</div>
 	</form>
 </div>
