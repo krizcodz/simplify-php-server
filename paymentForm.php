@@ -55,8 +55,10 @@
 	</style>
 	<?php
 	$publicKey = getenv('SIMPLIFY_API_PUBLIC_KEY');
-	echo "name" . $name = $_GET['name'];
-	echo "desc" . $description = $_GET['description'];
+	echo $name = $_GET['name'];
+	echo $description = $_GET['description'];
+	echo $reference = $_GET['reference'];
+	echo $amount = $_GET['amount'];
 	?>
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script type="text/javascript" src="//www.simplify.com/commerce/v1/simplify.js"></script>
@@ -117,17 +119,18 @@
 				var currency = $("#currency").val();
 				var name = $("#name").val();
 				var description = $("#description").val();
+				var reference = $("#reference").val();
 				var request = $.ajax({
 					url: "/charge.php",
 					type: "POST",
-					data: { simplifyToken: token, amount: amount, currency: currency, name: name, description: description}
+					data: { simplifyToken: token, amount: amount, currency: currency, name: name, description: description,reference: reference}
 				});
 
 				request.done(function (response) {
 					console.log("Response = ", response);
 					if (response.id) {
 						$success.html("Payment successfully processed & payment id = " + response.id + " ! - " + name +  " - " + description + " . ").fadeIn();
-						$successextra.html("Name :" + name +  " Description : " + description + " . ").fadeIn();
+						$successextra.html("Name :" + description +  " Description : " + name + " Amount: " + amount ).fadeIn();
 					}
 					else if (response.status) {
 						$error.html("Payment failed with status = " + response.status + " !").fadeIn();
@@ -154,7 +157,7 @@
 			<tr>
 				<td><label class="text">Amount in cents (i.e. 50 = $0.50): </label></td>
 				<td><label class="text"><input id="amount" class="w-input" type="text" maxlength="10" autocomplete="off"
-											   value="100" autofocus
+											   value="<?php echo $amount; ?>" autofocus
 											   placeholder="Enter Amount"/>
 					</label></td>
 			</tr>
@@ -357,11 +360,11 @@
 				</td>
 			</tr>
 		</table>
-		<input id="name" type="hidden" class="w-input" maxlength="4" autocomplete="off" value="48948 - DAVID - KG2 - THE INDIAN HIGH SCHOOL"/>
-		<input id="description" type="hidden" class="w-input" maxlength="4" autocomplete="off" value="School Fees Payment"/>
 		
-		<input id="name" type="text" class="w-input" maxlength="4" autocomplete="off" value="<?=name?>"/>
-		<input id="description" type="text" class="w-input" maxlength="4" autocomplete="off" value=" <?=description?>"/> 
+		
+		<input id="description" type="text" class="w-input" maxlength="4" autocomplete="off" value="<?php echo $name; ?>"/>
+		<input id="name" type="text" class="w-input" maxlength="4" autocomplete="off" value= "<?php echo $description; ?>"/> 
+		<input id="reference" type="text" class="w-input" maxlength="4" autocomplete="off" value="<?php echo $reference; ?>"/>
 		
 		<div class="footer-section">
 			<div class="busy-container"><img src="images/ajax-loader.gif"/></div>
