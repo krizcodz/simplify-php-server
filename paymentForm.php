@@ -129,7 +129,7 @@
 				request.done(function (response) {
 					console.log("Response = ", response);
 					if (response.id) {
-						$success.html("Payment successfully processed & payment id = " + response.id + " ! - " + name +  " - " + description + " . ").fadeIn();
+						$success.html("Payment successfully processed & payment id = " + response.id + " ! - " + name +  " - " + description + " -" + amount + " -" + reference).fadeIn();
 						$successextra.html("Name :" + description +  " Description : " + name + " Amount: " + amount ).fadeIn();
 					}
 					else if (response.status) {
