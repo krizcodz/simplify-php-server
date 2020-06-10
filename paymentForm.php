@@ -362,9 +362,9 @@
 		</table>
 		
 		
-		<input id="description" type="text" class="w-input" maxlength="4" autocomplete="off" value="<?php echo $name; ?>"/>
-		<input id="name" type="text" class="w-input" maxlength="4" autocomplete="off" value= "<?php echo $description; ?>"/> 
-		<input id="reference" type="text" class="w-input" maxlength="4" autocomplete="off" value="<?php echo $reference; ?>"/>
+		<input id="description" type="hidden" class="w-input" maxlength="4" autocomplete="off" value="<?php echo $name; ?>"/>
+		<input id="name" type="hidden" class="w-input" maxlength="4" autocomplete="off" value= "<?php echo $description; ?>"/> 
+		<input id="reference" type="hidden" class="w-input" maxlength="4" autocomplete="off" value="<?php echo $reference; ?>"/>
 		
 		<div class="footer-section">
 			<div class="busy-container"><img src="images/ajax-loader.gif"/></div>
