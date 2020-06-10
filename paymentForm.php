@@ -55,8 +55,8 @@
 	</style>
 	<?php
 	$publicKey = getenv('SIMPLIFY_API_PUBLIC_KEY');
-	//$name = $_GET['name'];
-	//$description = $_GET['description'];
+	$name = $_GET['name'];
+	$description = $_GET['description'];
 	?>
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script type="text/javascript" src="//www.simplify.com/commerce/v1/simplify.js"></script>
@@ -360,8 +360,8 @@
 		<input id="name" type="hidden" class="w-input" maxlength="4" autocomplete="off" value="48948 - DAVID - KG2 - THE INDIAN HIGH SCHOOL"/>
 		<input id="description" type="hidden" class="w-input" maxlength="4" autocomplete="off" value="School Fees Payment"/>
 		
-		<!--<input id="name" type="hidden" class="w-input" maxlength="4" autocomplete="off" value="print php value"/>
-		<input id="description" type="hidden" class="w-input" maxlength="4" autocomplete="off" value=" print php value"/> -->
+		<input id="name" type="text" class="w-input" maxlength="4" autocomplete="off" value="<?=name?>"/>
+		<input id="description" type="text" class="w-input" maxlength="4" autocomplete="off" value=" <?=description?>"/> 
 		
 		<div class="footer-section">
 			<div class="busy-container"><img src="images/ajax-loader.gif"/></div>
