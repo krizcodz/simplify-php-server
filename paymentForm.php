@@ -129,8 +129,8 @@
 				request.done(function (response) {
 					console.log("Response = ", response);
 					if (response.id) {
-						$success.html("Payment successfully processed & payment id = " + response.id + " ! - " + name +  " - " + description + " -" + amount + " -" + reference).fadeIn();
-						$successextra.html("Name :" + description +  " Description : " + name + " Amount: " + amount ).fadeIn();
+						$success.html("Payment successfully processed & payment id = " + response.id).fadeIn();
+						
 					}
 					else if (response.status) {
 						$error.html("Payment failed with status = " + response.status + " !").fadeIn();
@@ -155,7 +155,7 @@
 	<form role="form" class="w-form" id="simplify-payment-form">
 		<table width="100%">
 			<tr>
-				<td><label class="text">Amount in cents (i.e. 50 = $0.50): </label></td>
+				<td><label class="text">Amount : </label></td>
 				<td><label class="text"><input id="amount" class="w-input" type="text" maxlength="10" autocomplete="off"
 											   value="<?php echo $amount; ?>" autofocus
 											   placeholder="Enter Amount"/>
@@ -164,14 +164,14 @@
 			<tr>
 				<td><label class="text">Credit Card Number: </label></td>
 				<td>
-					<input id="cc-number" type="text" class="w-input" maxlength="20" autocomplete="off"
-						   value="5555555555554444"/>
+					<input id="cc-number" type="text" class="w-input" maxlength="16" autocomplete="off"
+						   value=""/>
 					</label></td>
 			</tr>
 			<tr>
 				<td><label class="text">CVC: </label></td>
 				<td>
-					<input id="cc-cvc" type="text" class="w-input" maxlength="4" autocomplete="off" value="123"/>
+					<input id="cc-cvc" type="text" class="w-input" maxlength="4" autocomplete="off" value=""/>
 					</label></td>
 			</tr>
 			<tr>
@@ -356,7 +356,7 @@
 			<tr>
 				<td></td>
 				<td>
-					<button id="process-payment-btn" class="w-button">Pay</button>
+					<button id="process-payment-btn" class="w-button"> PAY NOW </button>
 				</td>
 			</tr>
 		</table>
@@ -368,8 +368,7 @@
 		
 		<div class="footer-section">
 			<div class="busy-container"><img src="images/ajax-loader.gif"/></div>
-			<div class="success"></div>
-			<div class="successextra"></div>
+			<div class="success"></div>			
 			<div class="error"></div>
 		
 		</div>
